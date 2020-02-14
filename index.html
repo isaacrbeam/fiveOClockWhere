@@ -1,0 +1,44 @@
+<html>
+	<head>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		
+		<script>
+		$(function(){		
+			
+
+			var date = new Date();
+			var utcDate = date.toUTCString();
+			var utc_offset = (date.getTimezoneOffset()/60);
+			var utc_hours = date.getUTCHours();
+			
+			var current_hour_client=utc_hours+utc_offset;
+			$("#five_oclock_where").text(current_hour_client);
+	/*		
+			var is_it_five_oclock=current_hour_client;
+			var five_oclock_offset=utc_offset;
+			if(is_it_five_oclock==17){
+				$("#five_oclock_where").text("It's the 17th hour here. Stop working and enjoy life.");
+			}else if(is_it_five_oclock<17){
+			
+				while(is_it_five_oclock!==17){
+					is_it_five_oclock++;
+					five_oclock_offset++;
+				}
+				$("#five_oclock_where").text("It's 5 O'Clock + "+five_oclock_offset+"GSM");
+				
+			}else if(is_it_five_oclock>17){
+				while(is_it_five_oclock!==17){
+					is_it_five_oclock--;
+					five_oclock_offset--;					
+				}
+				$("#five_oclock_where").text("It's 5 O'Clock - "+five_oclock_offset+"GSM");
+
+			}
+			*/
+		});
+		</script>
+	</head> 
+	<body>
+		<h2 id='five_oclock_where'></h2>
+	</body>
+</html>
