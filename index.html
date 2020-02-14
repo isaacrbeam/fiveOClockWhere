@@ -35,10 +35,35 @@
 
 			}
 			*/
+			setInterval(function(){
+			five_oclock_here();
+			},1000);
 		});
+		function five_oclock_here(){
+			var dt = new Date();
+			var current_hr = dt.getHours();
+			var current_min=dt.getMinutes();
+			var current_sec=dt.getSeconds();
+			var hours=0;
+			var min=0;
+			var sec=0;
+			var goal = new Date(dt);
+			goal.setHours(17); 
+			if(current_hr>17){
+			goal.setDate(goal.getDate()+1);
+			hours= Math.abs(dt - goal) / 36e5;
+			hours-=1;
+			min=60-current_min;
+			sec=60-current_sec;
+			}else{
+				hours=17-current_hr;
+			}
+			$("#five_oclock_here").text("It'll be 5 O'Clock here in "+hours+" hours " +min+ "mins " +sec+ "seconds");
+		}
 		</script>
 	</head> 
 	<body>
 		<h2 id='five_oclock_where'></h2>
+		<h4 id='five_oclock_here'></h4>
 	</body>
 </html>
